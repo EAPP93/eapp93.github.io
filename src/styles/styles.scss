@@ -1,0 +1,52 @@
+@import './variables';
+@import'./navMenu';
+@import './main';
+@import './components/SideBar';
+@import './components/Resume';
+@import './components/AboutMe';
+@import './components/Education';
+@import './components/Portfolio';
+@import './components/ContactMe';
+
+:root{
+  scroll-behavior: smooth;
+}
+
+*,*::after,*::after{
+  @include box(0, 0, 0);
+}
+
+.wrapper{
+  @include wh(calc(100vw - (100vw - 100%)),auto);
+  @include box(0,0,0);
+  background-color: map-get($Colors, 'Principal');
+  @include screen(){
+    @include flex(row, center, start, 1em);
+  }
+}
+
+
+/*
+Breakpoint 
+1920
+1200
+1024
+768
+480
+320
+
+48rem 62rem 72rem
+
+For mobiles we can use 43rem which translates to around 688px,
+for tabs 62rem translating 992px, 
+and anything above 82rem or 1312px goes for wider screen.
+
+0 to 43 mobiles
+43 to 62 tablets
+62 to more others
+
+
+-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,
+"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",
+"Noto Color Emoji"
+*/

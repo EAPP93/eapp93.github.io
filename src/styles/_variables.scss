@@ -1,0 +1,87 @@
+// Colors
+// Se usa con map-get($Colors: , $key: )
+// variables
+
+$Colors:(
+  Principal: #F6D155,
+  Complementario: #FF6F61,
+  ColorBlackHigh: #222222,
+  ColorBlackLow: #666666,
+  ColorWhiteHigh: #fff,
+  ColorWhiteLow:#EFEFEF,
+  ColorInputForm:#ced4da
+);
+
+// mixin
+
+@mixin flex($direction:row, $justify:auto, $align:auto, $gap:0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+@mixin grid($columns:auto, $gap:auto, $justify: auto) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+  place-content: $justify;
+}
+
+@mixin autoFill($min, $max:1fr, $gap:0) {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax($min, $max));
+  gap: $gap
+}
+
+@mixin wh ($width:100%,$height:auto){
+  width: $width;
+  height: $height;
+}
+
+@mixin screen($medida:43rem) {
+  @media screen and (min-width:$medida){
+    @content
+  }
+}
+
+@mixin img($width:100%,$height:auto) {
+  object-fit: contain;
+  width: $width;
+  height: $height;
+}
+
+@mixin box($margin:0,$border:0,$padding:0) {
+  padding: $padding;
+  margin: $margin;
+  border: $border;
+  box-sizing: border-box;
+}
+
+@mixin section {
+  margin: 1em 0 0 1em;
+    font-size: 2.15em;
+    &::after{
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #FF6F61;
+    }
+}
+
+/*
+$principal: #276E;
+$complementario: #CECFC9;
+$oscuro:#0A3143;
+
+$ColorBlackHigh: #222222;
+$ColorBlackLow: #666666;
+
+$ColorLightHigh: #fff;
+$ColorLightLow:#EFEFEF;
+
+*/
+

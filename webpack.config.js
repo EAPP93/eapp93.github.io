@@ -63,12 +63,8 @@ module.exports = {
       },
       // Reglas para los archivos de imágenes
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource'
       }
     ]
   },
@@ -90,7 +86,7 @@ module.exports = {
     )
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     modules: [
       'node_modules'
     ]

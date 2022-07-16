@@ -1,0 +1,102 @@
+.side-bar{
+  @include wh(100%,auto);
+
+  &__hamburger{
+    padding: 1em .75em 1em 1em;
+    @include wh(100%,auto);
+    @include flex(row, space-between, center, 0);
+
+    span{
+      font-size: 2em;
+      color: #fff;
+    }
+  }
+
+  &__menu{
+    @include wh(100%,0);
+    opacity: 0;
+    overflow: hidden;
+    transition: height 1s ease;
+
+    &--active{
+      @include wh(100%,auto);
+      opacity: 1;
+
+      li{
+        list-style: none;
+        a{
+          text-decoration: none;
+          @include flex(row, space-between, center,0 );
+          font-size: 1.25em;
+          color: map-get($Colors,'ColorWhiteHigh');
+          padding: 1em 1.5em 1em 1em;
+          border-bottom: solid 1px map-get($Colors, 'ColorBlackLow');
+          svg{
+              color:#FF6F61;
+            }
+          &:hover{
+            background-color: map-get($Colors, 'ColorBlackLow');
+            color:#FF6F61;
+            svg{
+              color:map-get($Colors,'ColorWhiteHigh');
+            }
+          }
+        }
+      }
+
+      li:last-child{
+        a{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 72rem) {
+  .side-bar{
+    &__hamburger{
+      display: none;
+    }
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: map-get($Colors, 'ColorBlackHigh');
+
+    &__menu{
+      position: relative;
+      top:300px;
+      @include wh(100%,auto);
+      opacity: 1;
+
+      li{
+        list-style: none;
+        a{
+          text-decoration: none;
+          @include flex(row, space-between, center,0 );
+          font-size: 1.25em;
+          color: map-get($Colors,'ColorWhiteHigh');
+          padding: .5em 1.7em .5em 1.5em;
+          border-bottom: solid 1px map-get($Colors, 'ColorBlackLow');
+          svg{
+              color:#FF6F61;
+            }
+          &:hover{
+            color:#FF6F61;
+            svg{
+              color:map-get($Colors,'ColorWhiteHigh');
+            }
+          }
+        }
+      }
+
+      li:last-child{
+        a{
+          border-bottom: none;
+        }
+      }
+
+      
+    }
+  }
+}

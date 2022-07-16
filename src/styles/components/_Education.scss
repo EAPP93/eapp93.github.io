@@ -1,0 +1,29 @@
+.education{
+  @include wh(100%,auto);
+  h2{
+    @include section()
+  }
+
+  &__article{
+    margin: 1em;
+
+    h3{
+      text-align: center;
+    }
+
+    ul{
+      @include wh(100%,auto);
+      @include autoFill(7em,1fr, 2em 0);
+      >li{
+        list-style: none;
+        @include flex(column, space-between, center,1em);
+        img{
+          display: block;
+          width: 12em;
+          object-fit: contain;
+        }
+      }
+    }
+    
+  }
+}
