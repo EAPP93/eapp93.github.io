@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/EAPP93/eapp93.github.io/issues"
   },
-  "homepage": "https://github.com/EAPP93/eapp93.github.io/eapp93.github.io",
+  "homepage": "https://eapp93.github.io/",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
