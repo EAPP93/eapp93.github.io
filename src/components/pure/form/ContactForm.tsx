@@ -40,7 +40,7 @@ function ContactForm () {
         <Field id="lastName" name="lastName" placeholder="Your Last Name"/>
         <Field id="email" name="email" type="email" placeholder="Your Email"/>
         <Field id="subject" name="subject" placeholder="Subject"/>
-        <Field id="message" name="message" component="textarea" placeholder="Message"/>
+        <Field id="message" name="message" component="textarea" placeholder="  Message"/>
         <button type="submit">Submit</button>
       </Form>
     </Formik>

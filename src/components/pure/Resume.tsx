@@ -1,24 +1,30 @@
 import React from 'react'
-import Foto from './../../asset/img/body.png'
-
-const image: Object = {
-  backgroundImage: `url(${Foto})`,
-  backgroundPosition: ' 100% 100%',
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat'
-}
+import { homeIcons } from '../../asset/icons/icons'
+import { useGetPropertyValue } from '../../hooks/useGetPropertyValue'
+import { useLanguajeContext, useThemeContext } from '../../hooks/UseProvider'
+import styles from './../../styles/components/Home.module.scss'
 
 function Resume () {
+  const myLang = useLanguajeContext()
+  const home = myLang.section[0]
+  const theme : string = useThemeContext()
+  const curriculumURL = 'https://drive.google.com/file/d/1pdQqaEAUcH73cqoDs3HipxSNFggnZvHc/view?usp=sharing'
   return (
-    <section className="resume">
-      <div className="resume__container" style={image} >
-          <h2 >i am</h2>
-          <h1 id='Resume'>Edwing Picado</h1>
-          <span>web developer</span>
+    <section id={home.id} className={`${styles[theme]} ${styles.home}`}>
+      <div className={styles.textContainer} >
+          <h2>{home.data.textSection[0]}</h2>
+          <h1>{home.data.textSection[1]}</h1>
+          <span >{home.data.textSection[2]}</span>
       </div>
-      <div className="resume__btn" >
-        <button id='more'>More</button>
-        <button id='hireMe'>Hire Me</button>
+      <div className={styles.btnContainer} >
+        <a href={curriculumURL} target="_blank" download rel="noreferrer">
+          <img src={useGetPropertyValue(homeIcons, 'downloadCV')} className={styles.downloadCV} alt="download"/>
+          {home.data.textBtn.downloadCV}
+        </a>
+        <a href={`#${myLang.section[4].id}`}>
+          <img src={useGetPropertyValue(homeIcons, 'hireMe')} className={styles.hireMe} alt=""/>
+          {home.data.textBtn.hireMe}
+        </a>
       </div>
     </section>
   )

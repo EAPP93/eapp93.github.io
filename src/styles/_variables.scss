@@ -1,87 +1,51 @@
-// Colors
-// Se usa con map-get($Colors: , $key: )
-// variables
+@use './colors' as *; 
 
-$Colors:(
-  Principal: #F6D155,
-  Complementario: #FF6F61,
-  ColorBlackHigh: #222222,
-  ColorBlackLow: #666666,
-  ColorWhiteHigh: #fff,
-  ColorWhiteLow:#EFEFEF,
-  ColorInputForm:#ced4da
-);
+/********************** Breakpoints *****************************/
+$medium : 42rem;// tablets
+$large : 72rem; // pc
 
-// mixin
+/********************** Mixins *********************************/
 
-@mixin flex($direction:row, $justify:auto, $align:auto, $gap:0) {
+@mixin flex($flow: auto, $justify:auto, $align:auto) {
   display: flex;
-  flex-direction: $direction;
+  flex-flow: $flow;
   justify-content: $justify;
   align-items: $align;
-  flex-wrap: wrap;
-  gap: $gap;
 }
 
-@mixin grid($columns:auto, $gap:auto, $justify: auto) {
+@mixin grid($columns:auto, $gap:auto) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
-  place-content: $justify;
 }
 
-@mixin autoFill($min, $max:1fr, $gap:0) {
+@mixin autoFit($min, $max:1fr, $gap:0) {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax($min, $max));
+  grid-template-columns: repeat(auto-fit, minmax($min, $max));
   gap: $gap
 }
 
-@mixin wh ($width:100%,$height:auto){
-  width: $width;
-  height: $height;
-}
-
-@mixin screen($medida:43rem) {
+@mixin screen($medida) {
   @media screen and (min-width:$medida){
     @content
   }
 }
 
-@mixin img($width:100%,$height:auto) {
-  object-fit: contain;
-  width: $width;
-  height: $height;
-}
-
-@mixin box($margin:0,$border:0,$padding:0) {
-  padding: $padding;
-  margin: $margin;
-  border: $border;
-  box-sizing: border-box;
-}
-
 @mixin section {
-  margin: 1em 0 0 1em;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3.5rem 1.85rem;
+  
+  .sectionID{
     font-size: 2.15em;
+    margin-bottom: 1rem;
+
     &::after{
       content: '';
       display: block;
-      width: 60px;
-      height: 3px;
-      background: #FF6F61;
+      width: 3.125rem;
+      height: 0.2rem;
+      background: $color-light-secondary;
     }
+  }
 }
-
-/*
-$principal: #276E;
-$complementario: #CECFC9;
-$oscuro:#0A3143;
-
-$ColorBlackHigh: #222222;
-$ColorBlackLow: #666666;
-
-$ColorLightHigh: #fff;
-$ColorLightLow:#EFEFEF;
-
-*/
-

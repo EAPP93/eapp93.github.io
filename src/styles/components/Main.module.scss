@@ -1,0 +1,39 @@
+@use './../variables' as *;
+
+.main{
+  width: 100%;
+  height: auto;
+  padding: 0.925rem;
+  box-sizing: border-box;
+}
+
+.main > section{
+  width: 100%;
+  margin-bottom: 0.925rem;
+
+  li{
+    list-style: none;
+  }
+}
+
+.main > section:last-child{
+  margin-bottom: 0;
+}
+
+// ************************** breakpoint medium ************************************
+@include screen($medium){
+  .main{
+    padding: 1.85rem 1.85rem 1.85rem 5.35rem;
+  }
+
+  .main > section{
+    margin-bottom: 1.85rem;
+  }
+}
+// ************************** breakpoint large *************************************
+
+@include screen($large){
+  .main{
+    padding: 1.85rem 0 1.85rem 20.6rem;
+  }
+}
