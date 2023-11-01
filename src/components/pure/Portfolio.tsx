@@ -21,10 +21,10 @@ function Portfolio () {
               <img src={require(`./../../asset/img/original/${project.img}`)} alt={project.altImg}/>
               <header>
                 <a href={project.repoURL} target="_blank" rel="noreferrer">
-                  <img src={require(`./../../asset/icons/${project.repoURLImg}`)}/>
+                  <img src={require(`./../../asset/icons/${project.repoURLImg}`)} alt=''/>
                 </a>
                 <a href={project.appURL} target="_blank" rel="noreferrer" >
-                  <img src={require(`./../../asset/icons/${project.appURLImg}`)}/>
+                  <img src={require(`./../../asset/icons/${project.appURLImg}`)} alt=''/>
                 </a>
               </header>
               <main>
