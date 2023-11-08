@@ -40,7 +40,7 @@ function App() {
     <div className="maintenance-page"> {/* Cambia "style" por "className" */}
       <div className="maintenance-content"> {/* Cambia "style" por "className" */}
         <h1 className="h1">Estamos en mantenimiento.</h1> {/* Cambia "style" por "className" */}
-        <h2 className="h2">¡Pronto estaremos de vuelta con una nueva versión de nuestro portafolio!</h2> {/* Cambia "style" por "className" */}
+        <h2 className="h2">¡Pronto estaremos de vuelta con una nueva versión del portafolio!</h2> {/* Cambia "style" por "className" */}
         <div className="countdown"> {/* Cambia "style" por "className" */}
           <span className="countdown-number">{days}</span> {/* Cambia "style" por "className" */}
           <p className="countdown-label">días</p> {/* Cambia "style" por "className" */}
