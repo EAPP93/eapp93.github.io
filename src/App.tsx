@@ -37,19 +37,19 @@ function App() {
   }, []);
 
   return (
-    <div className="maintenance-page"> {/* Cambia "style" por "className" */}
-      <div className="maintenance-content"> {/* Cambia "style" por "className" */}
-        <h1 className="h1">Estamos en mantenimiento.</h1> {/* Cambia "style" por "className" */}
-        <h2 className="h2">¡Pronto estaremos de vuelta con una nueva versión del portafolio!</h2> {/* Cambia "style" por "className" */}
-        <div className="countdown"> {/* Cambia "style" por "className" */}
-          <span className="countdown-number">{days}</span> {/* Cambia "style" por "className" */}
-          <p className="countdown-label">días</p> {/* Cambia "style" por "className" */}
-          <span className="countdown-number">{hours}</span> {/* Cambia "style" por "className" */}
-          <p className="countdown-label">horas</p> {/* Cambia "style" por "className" */}
-          <span className="countdown-number">{minutes}</span> {/* Cambia "style" por "className" */}
-          <p className="countdown-label">minutos</p> {/* Cambia "style" por "className" */}
-          <span className="countdown-number">{seconds}</span> {/* Cambia "style" por "className" */}
-          <p className="countdown-label">segundos</p> {/* Cambia "style" por "className" */}
+    <div className="maintenance-page"> 
+      <div className="maintenance-content"> 
+        <h1 className="h1">Estamos en mantenimiento.</h1> 
+        <h2 className="h2">¡Pronto estaremos de vuelta con una nueva versión del portafolio!</h2> 
+        <div className="countdown"> 
+          <span className="countdown-number">{days}</span>
+          <p className="countdown-label">días</p> 
+          <span className="countdown-number">{hours}</span> 
+          <p className="countdown-label">horas</p> 
+          <span className="countdown-number">{minutes}</span> 
+          <p className="countdown-label">minutos</p> 
+          <span className="countdown-number">{seconds}</span> 
+          <p className="countdown-label">segundos</p> 
         </div>
       </div>
     </div>
